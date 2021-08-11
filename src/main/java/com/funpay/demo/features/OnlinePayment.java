@@ -49,8 +49,8 @@ public class OnlinePayment {
         paramMap.put("orderNo", orderNo);
         paramMap.put("returnUrl", Constant.RETURN_URL);
         paramMap.put("purchaseType", "2");
-        paramMap.put("phoneNumber", "21678467812");
-        paramMap.put("userName", "alenTest");
+        paramMap.put("phoneNumber", "123456789");
+        paramMap.put("userName", "test");
         paramMap.put("IDNo", "");
 
         HashMap<String, String> param = new HashMap<>(1);
@@ -76,6 +76,7 @@ public class OnlinePayment {
         paramMap.put("merchantID", Constant.MERCHANT);
         paramMap.put("businessID", Constant.BUSINESS);
         paramMap.put("timestamp", currentTimeStamp);
+        // 模拟环境仅为示意，orderNo tradeNo 是重要的交易凭证，真实环境不可随意设置
         paramMap.put("tradeNo", "003000620220210701170946252729");
         paramMap.put("orderNo", orderId);
         //请使用越南时间
@@ -116,6 +117,4 @@ public class OnlinePayment {
         DemoUtil.doCheckResult(res);
 
     }
-
-
 }

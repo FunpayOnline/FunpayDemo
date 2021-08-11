@@ -22,6 +22,7 @@ public class Transfer {
         paramMap.put("merchantID", Constant.MERCHANT);
         paramMap.put("businessID", Constant.BUSINESS);
         paramMap.put("timestamp", currentTimeStamp);
+        // 模拟环境仅为示意，tradeNo 是重要的交易凭证，真实环境不可随意设置
         paramMap.put("tradeNo", "003000620220210701170946252729");
         //请使用越南时间
         String endTime = new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
@@ -51,6 +52,7 @@ public class Transfer {
         paramMap.put("merchantID", Constant.MERCHANT);
         paramMap.put("businessID", Constant.BUSINESS);
         paramMap.put("timestamp", currentTimeStamp);
+        // 模拟环境仅为示意，tradeNo orderNo是重要的交易凭证，真实环境不可随意设置
         paramMap.put("tradeNo", "003000620220210701170914589236");
         paramMap.put("orderNo", orderId);
         paramMap.put("version", "2.0");
@@ -74,9 +76,10 @@ public class Transfer {
         paramMap.put("timestamp", currentTimeStamp);
         paramMap.put("bankNo", 28);
         paramMap.put("bankLocation", "vn");
-        paramMap.put("accountNo", "19032686181014");
+        // 模拟环境仅为示意，此处都是仿真值
+        paramMap.put("accountNo", "123456789");
         paramMap.put("accountType", 0);
-        paramMap.put("accountName", "LE THI THAM");
+        paramMap.put("accountName", "LE VAN HOAI");
         paramMap.put("version", "2.0");
 
         HashMap<String, String> param = new HashMap<>(1);
@@ -92,7 +95,6 @@ public class Transfer {
      * 接口地址：/fun/transfer/api/getBankList
      */
     public static void getBankList() {
-
         long currentTimeStamp = System.currentTimeMillis();
         HashMap<String, Object> paramMap = new HashMap<>(10);
         paramMap.put("merchantID", Constant.MERCHANT);
@@ -133,8 +135,9 @@ public class Transfer {
             paramMap.put("orderNo", orderId);
             // 回调地址非常重要 真实环境中不可为空
             paramMap.put("returnUrl", "");
-            paramMap.put("accountName", "LE THI THAM");
-            paramMap.put("accountNo", "19032686181014");
+            // 模拟环境仅为示意，此处都是仿真值
+            paramMap.put("accountName", "LE VAN HOAI");
+            paramMap.put("accountNo", "123456789");
             paramMap.put("bankNo", 28);
             paramMap.put("accountType", 0);
             paramMap.put("bankLocation", "vn");

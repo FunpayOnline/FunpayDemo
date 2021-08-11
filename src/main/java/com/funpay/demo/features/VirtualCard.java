@@ -15,7 +15,7 @@ public class VirtualCard {
     /**
      * 创建虚拟卡接口地址
      */
-    public static final String VIRTUAL_CARD_CREATE = Constant.DOMAIN + "/fun/payment/virtualCard/api/create";
+    public static final String VIRTUAL_CARD_CREATE = Constant.DOMAIN + "/fun/payment/card/create.do";
     /**
      * 释放虚拟卡接口地址
      */
@@ -49,7 +49,8 @@ public class VirtualCard {
         paramMap.put("businessID", Constant.BUSINESS);
         paramMap.put("feeID", Constant.FEE_ID);
         paramMap.put("timestamp", timestamp + "");
-        paramMap.put("orderNo", "1617272135886HGSsAT3");
+        // 模拟环境仅为示意，orderNo是重要的交易凭证，真实环境不可随意设置
+        paramMap.put("orderNo", orderId);
         paramMap.put("bankType", "");
         paramMap.put("version", "2.0");
 
@@ -74,11 +75,11 @@ public class VirtualCard {
         paramMap.put("feeID", Constant.FEE_ID);
         paramMap.put("timestamp", currentTimeStamp + "");
         paramMap.put("version", "2.0");
+        // 模拟环境仅为示意，orderNo tradeNo accountNo是重要的交易凭证，真实环境不可随意设置
+        // 以下三个值至少三选一
         paramMap.put("tradeNo", "003000620220210701170914589236");
         paramMap.put("orderNo", orderId);
         paramMap.put("accountNo", "");
-        paramMap.put("bankType", "");
-
         paramMap.put("pageSize", 10);
         paramMap.put("pageNum", 0);
 
@@ -97,6 +98,7 @@ public class VirtualCard {
 
         long timestamp = System.currentTimeMillis();
         String orderId = timestamp + RandomUtil.charDigits(5);
+        String randStr = timestamp + RandomUtil.charDigits(9);
         HashMap<String, Object> paramMap = new HashMap<>(10);
         paramMap.put("merchantID", Constant.MERCHANT);
         paramMap.put("businessID", Constant.BUSINESS);
@@ -106,13 +108,14 @@ public class VirtualCard {
         paramMap.put("version", "2.0");
         paramMap.put("amount", 50000);
         paramMap.put("currency", Constant.CURRENCY);
+        // 模拟环境仅为示意，orderNo是重要的交易凭证，真实环境不可随意设置
         paramMap.put("orderNo", orderId);
-        paramMap.put("expireDate", "20220101");
+        // 此值暂无实际意义，保留参数，置空即可
+        paramMap.put("expireDate", "");
         // 回调地址非常重要 真实环境中不可为空
         paramMap.put("returnUrl", Constant.RETURN_URL);
-        paramMap.put("bankType", "VTBfix");
-        paramMap.put("accountBase", "123413457");
-        paramMap.put("phoneNumber", "1234562678");
+        paramMap.put("accountBase", randStr);
+        paramMap.put("phoneNumber", randStr);
         paramMap.put("userName", "test");
         paramMap.put("IDNo", "");
 
@@ -140,17 +143,18 @@ public class VirtualCard {
         paramMap.put("merchantID", Constant.MERCHANT);
         paramMap.put("businessID", Constant.BUSINESS);
         paramMap.put("feeID", Constant.FEE_ID);
-        paramMap.put("accountNo", "902000225482");
         paramMap.put("timestamp", timestamp + "");
-        paramMap.put("orderNo", "12345566671");
-        paramMap.put("bankType", "");
+        // 模拟环境仅为示意，orderNo是重要的交易凭证，真实环境不可随意设置
+        paramMap.put("orderNo", orderId);
         paramMap.put("version", "2.0");
 
         // 对map参数进行排序并签名
         paramMap.put("sign", EncryptUtil.encrypt(paramMap, Constant.SECRET_KEY, Constant.LOCALE_PRIVATE_KEY));
         try {
             HttpUtil.Response res = HttpUtil.doPost(VIRTUAL_CARD_DESTROY, null, JSON.toJSONString(paramMap));
-            DemoUtil.doCheckResult(res, false);
+            if (null != res) {
+                DemoUtil.doCheckResult(res, false);
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -170,10 +174,10 @@ public class VirtualCard {
         paramMap.put("merchantID", Constant.MERCHANT);
         paramMap.put("businessID", Constant.BUSINESS);
         paramMap.put("timestamp", currentTimeStamp);
+        // 模拟环境仅为示意，tradeNo orderNo accountNo是重要的交易凭证，真实环境不可随意设置
         paramMap.put("tradeNo", "003000620220210701170946252729");
         paramMap.put("orderNo", orderId);
-        paramMap.put("accountNo", "2.0");
-        paramMap.put("bankType", "2.0");
+        paramMap.put("accountNo", "");
         paramMap.put("version", "2.0");
 
         //请使用越南时间

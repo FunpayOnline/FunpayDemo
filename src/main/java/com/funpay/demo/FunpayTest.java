@@ -19,10 +19,10 @@ public class FunpayTest {
         // KeyGenerator.testKeyFromAlipay();
 
         // 如果你希望使用本工具自动生成密钥对，请释放本方法，并将密钥对存储路径填入本文件顶端的相应变量中
-//        KeyGenerator.testAutoGen();
+        // KeyGenerator.testAutoGen();
 
         // 如果你希望使用OpenSSL生成的密钥对，请释放本方法，并将密钥对存储路径填入本文件顶端的相应变量中
-         KeyGenerator.testLocaleFile();
+        // KeyGenerator.testLocaleFile();
     }
 
     @org.junit.Test
