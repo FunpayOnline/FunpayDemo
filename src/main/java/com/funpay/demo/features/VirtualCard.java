@@ -8,8 +8,11 @@ import java.util.Date;
 import java.util.HashMap;
 
 /**
+ * 虚拟卡功能会陆续开放，请稍候
+ *
  * @author FunPay
  */
+@Deprecated
 public class VirtualCard {
 
     /**

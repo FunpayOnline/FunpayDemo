@@ -165,7 +165,6 @@ public class EncryptUtil {
         }
 
         //Url Safe Base64
-
         return Base64.getUrlEncoder().encodeToString(sb.toString().getBytes());
     }
 

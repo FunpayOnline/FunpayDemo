@@ -57,7 +57,7 @@ public class Constant {
     /**
      * Api域名
      */
-    public static final String DOMAIN = "https://sandbox.funpay.asia";
+    public static final String DOMAIN = "https://ph.sandbox.funpay.asia";
 
     /**
      * 打款接口地址
@@ -95,7 +95,9 @@ public class Constant {
     public static final int BUSINESS = 10000;
     public static final int FEE_ID = 10010;
 
-    public static final String CURRENCY = "VND";
+    public static final String FEE_NAME = "FEE";
+
+    public static final String CURRENCY = "PHP";
     public static final String CLIENT_ID = "FUNPAY-TEST";
 
 

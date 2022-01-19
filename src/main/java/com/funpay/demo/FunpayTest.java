@@ -29,7 +29,7 @@ public class FunpayTest {
     public void offlinePaymentTest() {
         OfflinePayment.queryBalance();
         OfflinePayment.query();
-        OfflinePayment.updateVtpCode();
+        OfflinePayment.updateOfflineCode();
         OfflinePayment.offlinePay();
         OfflinePayment.offlineCheck();
     }

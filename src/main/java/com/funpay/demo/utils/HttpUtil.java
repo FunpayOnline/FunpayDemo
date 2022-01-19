@@ -27,7 +27,7 @@ public class HttpUtil {
 
     private static final String CHARSET = "utf-8";
     private static final String CONTENT_TYPE = "application/json;charset=" + CHARSET;
-    private static final String SSL_PROTOCOLS = "TLSv1.2,TLSv1.1,SSLv3";
+    private static final String SSL_PROTOCOLS = "TLSv1.3,TLSv1.2,TLSv1.1,SSLv3";
     private static final int READ_TIMEOUT = 180 * 1000;
     private static final int CONNECTION_TIMEOUT = 3 * 1000;
 
